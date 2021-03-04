@@ -1,11 +1,11 @@
+import { Counter } from 'src/components/Counter';
 import { Hello } from '../components/Hello';
 
 const Index: React.FC = () => {
-  console.log('apple');
-
   return (
     <>
       <Hello name={'banana'} />
+      <Counter />
     </>
   );
 };
