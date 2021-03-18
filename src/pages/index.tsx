@@ -1,13 +1,11 @@
-import { Counter } from 'src/components/Counter';
-import { Hello } from '../components/Hello';
+import Link from 'next/link';
 
-const Index: React.FC = () => {
+const Home: React.FC = () => {
   return (
     <>
-      <Hello name={'banana'} />
-      <Counter />
+      <Link href={'/search-result'}>検索</Link>
     </>
   );
 };
 
-export default Index;
+export default Home;
