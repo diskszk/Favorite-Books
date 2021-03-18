@@ -1,5 +1,10 @@
 import React from 'react';
-// import { css } from '@emotion/react';
+import { css } from '@emotion/react';
+
+const input = css({
+  width: '380px',
+  height: '40px',
+});
 
 type Props = {
   maxLength?: number;
@@ -12,7 +17,7 @@ type Props = {
   onChange: (ev: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-const Input: React.FC<Props> = ({
+export const Input: React.FC<Props> = ({
   maxLength = 255,
   minLength = 0,
   placeholder = '',
@@ -23,6 +28,7 @@ const Input: React.FC<Props> = ({
 }) => {
   return (
     <input
+      css={input}
       maxLength={maxLength}
       minLength={minLength}
       placeholder={placeholder}
@@ -33,5 +39,3 @@ const Input: React.FC<Props> = ({
     />
   );
 };
-
-export default Input;

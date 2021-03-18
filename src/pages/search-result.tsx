@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import Input from 'src/components/atmos/Input';
-import Select from 'src/components/atmos/select';
+import { Input } from '../components/atmos/index';
 
 const SearchResult = () => {
   const [name, setName] = useState('');
@@ -13,17 +12,7 @@ const SearchResult = () => {
 
   return (
     <div>
-      <div>
-        <Select values={['apple', 'orange', 'grape']} />
-        <Input
-          required={false}
-          maxLength={20}
-          minLength={12}
-          type={'text'}
-          value={name}
-          onChange={handleChangeName}
-        />
-      </div>
+      <div></div>
     </div>
   );
 };

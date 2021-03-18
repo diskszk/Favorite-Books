@@ -3,7 +3,13 @@ import { Header } from '../organisms';
 import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
 
-const main = css({});
+const main = css({
+  width: '80%',
+  backgroundColor: '#fefefe',
+  margin: '0 auto',
+  border: '0px',
+  borderRadius: '0 0 12px 12px',
+});
 
 export const Layout: React.FC = ({ children }) => {
   return (

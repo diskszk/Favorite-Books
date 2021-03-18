@@ -1,22 +1,28 @@
 import React from 'react';
-// import { css } from '@emotion/react';
+import { Value, Label } from '../../types';
+import { css } from '@emotion/react';
+
+const select = css({
+  width: '380px',
+  height: '40px',
+});
 
 type Props = {
-  values: string[];
+  onChange: (ev: React.ChangeEvent<HTMLSelectElement>) => void;
+  options: { value: Value; label: Label }[];
+  value: string;
 };
 
-const Select: React.FC<Props> = ({ values = ['Please Select One'] }) => {
+export const Select: React.FC<Props> = ({ onChange, options, value }) => {
   return (
-    <select>
-      {values.map((value, key) => {
+    <select css={select} value={value} onChange={onChange}>
+      {options.map((option, key) => {
         return (
-          <option key={key} value={value}>
-            {value}
+          <option key={key} value={option.value}>
+            {option.label}
           </option>
         );
       })}
     </select>
   );
 };
-
-export default Select;

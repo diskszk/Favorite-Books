@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { css } from '@emotion/react';
 
 const header = css({
@@ -17,6 +17,15 @@ const title = css({
 });
 
 export const Header: React.FC = () => {
+  const [isSignin, setIsSignin] = useState(false);
+
+  function handleSignin() {
+    setIsSignin(true);
+  }
+  function handleSignout() {
+    setIsSignin(false);
+  }
+
   return (
     <header css={header}>
       <div>
@@ -24,9 +33,20 @@ export const Header: React.FC = () => {
           My Favorite Books
         </a>
       </div>
+
       <div>
-        <button>sign in</button>
-        <button>sign up</button>
+        {isSignin ? (
+          <div>
+            <img src="#" alt={'アイコン'} />
+            <img src="#" alt="検索ボタン" />
+            <button onClick={handleSignout}>sign out</button>
+          </div>
+        ) : (
+          <div>
+            <button onClick={handleSignin}>sign in</button>
+            <button onClick={handleSignout}>sign up</button>
+          </div>
+        )}
       </div>
     </header>
   );
