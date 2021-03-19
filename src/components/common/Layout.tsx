@@ -1,8 +1,10 @@
 import React from 'react';
-import { Header } from '../organisms';
 import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
 import { styles } from '../../constants';
+
+import { ErrorMessageModal, LoadingModal, MessageModal } from '../utils';
+import { Header } from '../organisms';
 
 const color = styles.color;
 
@@ -29,9 +31,10 @@ export const Layout: React.FC = ({ children }) => {
           body {
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic   ProN', 'Hiragino Sans',
               Meiryo, sans-serif;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: normal;
             background-color: #e4e4e4;
+            white-space: pre-line;
           }
           a {
             text-decoration: none;
@@ -43,6 +46,12 @@ export const Layout: React.FC = ({ children }) => {
         `}
       />
       <Header />
+
+      {/* Storeで管理すること */}
+      {/* <ErrorMessageModal errorMessage={'エラーが発生しました。'} />
+      <LoadingModal label={'Loading...'} />
+      <MessageModal message={'Message'} /> */}
+
       <main css={main}>{children}</main>
       <footer>フッター</footer>
     </>

@@ -39,12 +39,7 @@ export const ModalWrapper: React.FC = ({ children }) => {
   return (
     <div css={background}>
       <div css={modal}>
-        <div css={content}>
-          {children}
-          {/* <p>モーダルウィンドウ</p>
-          <Spacer height={4} />
-          <Button label={label} onClick={() => alert('modal')} /> */}
-        </div>
+        <div css={content}>{children}</div>
       </div>
     </div>
   );

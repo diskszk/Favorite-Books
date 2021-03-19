@@ -1,7 +1,11 @@
 import React from 'react';
 import { ModalWrapper } from '../organisms';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Button } from '../atmos';
+import { css } from '@emotion/react';
+
+const text = css({
+  marginTop: '1.5rem',
+});
 
 type Props = {
   label: string;
@@ -10,9 +14,8 @@ type Props = {
 export const LoadingModal: React.FC<Props> = ({ label }) => {
   return (
     <ModalWrapper>
-      <CircularProgress disableShrink />
-      <p>{label}</p>
-      <Button label={'閉じる'} onClick={() => alert('close')} />
+      <CircularProgress disableShrink size={100} />
+      <p css={text}>{label}</p>
     </ModalWrapper>
   );
 };

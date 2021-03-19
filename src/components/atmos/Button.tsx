@@ -16,19 +16,28 @@ const button = css({
   fontSize: '1rem',
   color: color.white,
 
+  ':disabled': {
+    cursor: 'default',
+    backgroundColor: color.gray,
+    ':hover': {
+      backgroundColor: color.gray,
+    },
+  },
+
   '&:hover': {
     backgroundColor: color.darkGreen,
   },
 });
 
 type Props = {
+  disabled?: boolean;
   label: string;
   onClick: (_ev: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 };
 
-export const Button: React.FC<Props> = ({ label, onClick }) => {
+export const Button: React.FC<Props> = ({ disabled = false, label, onClick }) => {
   return (
-    <button css={button} onClick={onClick}>
+    <button css={button} disabled={disabled} onClick={onClick}>
       {label}
     </button>
   );

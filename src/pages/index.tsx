@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import { SearchArea } from 'src/components/organisms';
-import { LoadingModal } from '../components/utils';
+import { LoadingModal, ErrorMessageModal } from '../components/utils';
 
 const Home: React.FC = () => {
   return (
     <>
-      <LoadingModal label={'読み込み中'} />
+      {/* <LoadingModal label={'Loading...'} /> */}
+      {/* <ErrorMessageModal errorMessage={'エラーが発生しました。\nエラーが発生しました。'} /> */}
       <SearchArea />
       <Link href={'/search-result'}>検索</Link>
     </>
