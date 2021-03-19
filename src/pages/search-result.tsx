@@ -12,7 +12,16 @@ const SearchResult = () => {
 
   return (
     <div>
-      <div></div>
+      <div>
+        <Input
+          required={false}
+          maxLength={20}
+          minLength={12}
+          type={'text'}
+          value={name}
+          onChange={handleChangeName}
+        />
+      </div>
     </div>
   );
 };
