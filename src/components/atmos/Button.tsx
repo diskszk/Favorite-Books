@@ -7,7 +7,7 @@ const color = styles.color;
 const button = css({
   width: '8rem',
   height: '3rem',
-  backgroundColor: 'lightgreen', // 144, 238, 144
+  backgroundColor: 'lightgreen',
   border: `1px solid ${color.gray}`,
   borderRadius: '0.8rem',
   transition: 'all 0.25s ease',
