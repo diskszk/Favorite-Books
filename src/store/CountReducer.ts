@@ -1,4 +1,5 @@
-import { Count, initialState } from './initialState';
+import { Count } from '../lib/types';
+import { initialState } from './initialState';
 
 const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';

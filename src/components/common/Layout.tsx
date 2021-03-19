@@ -3,6 +3,10 @@ import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
 import { styles } from '../../constants';
 
+import { useSelector } from 'react-redux';
+import { RootStore } from '../../store/initialState';
+import { LoadingStatus } from '../../lib/types';
+
 import { ErrorMessageModal, LoadingModal, MessageModal } from '../utils';
 import { Header } from '../organisms';
 
@@ -17,6 +21,8 @@ const main = css({
 });
 
 export const Layout: React.FC = ({ children }) => {
+  const { isLoading } = useSelector<RootStore, LoadingStatus>((state) => state.loadingStatus);
+
   return (
     <>
       <Global
@@ -49,8 +55,8 @@ export const Layout: React.FC = ({ children }) => {
 
       {/* Storeで管理すること */}
       {/* <ErrorMessageModal errorMessage={'エラーが発生しました。'} />
-      <LoadingModal label={'Loading...'} />
       <MessageModal message={'Message'} /> */}
+      {isLoading && <LoadingModal label={'Loading...'} />}
 
       <main css={main}>{children}</main>
       <footer>フッター</footer>
