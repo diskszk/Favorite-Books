@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { createDecrementAction, createIncrementAction } from '../store/CountReducer';
 import { RootStore } from '../store/initialState';
-import { Count } from '../types';
+import { Count } from '../lib/types';
 
 export const Counter: React.FC = () => {
   const dispatch = useDispatch();

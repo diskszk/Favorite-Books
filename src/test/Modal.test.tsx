@@ -3,7 +3,7 @@ import '../setupTests';
 import { useDispatch, useSelector } from 'react-redux';
 import { shallow } from 'enzyme';
 
-import { ModalStatus } from '../types';
+import { ModalStatus } from '../lib/types';
 
 import { ModalWrapper } from '../components/organisms';
 // ErrorMessageModalのテストを追加すること

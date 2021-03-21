@@ -5,7 +5,7 @@ import { styles } from '../../constants';
 
 import { useSelector } from 'react-redux';
 import { RootStore } from '../../store/initialState';
-import { ErrorStatus, LoadingStatus, ModalStatus } from '../../types';
+import { ErrorStatus, LoadingStatus, ModalStatus } from '../../lib/types';
 
 import { ErrorModal, LoadingModal } from './';
 import { Header } from '../organisms';

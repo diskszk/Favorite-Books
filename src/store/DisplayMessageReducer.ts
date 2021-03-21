@@ -1,4 +1,4 @@
-import { Message } from '../types';
+import { Message } from '../lib/types';
 import { initialState } from './initialState';
 
 const DISPLAY_MESSAGE = 'DISPLAY_MESSAGE';

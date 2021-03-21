@@ -1,4 +1,4 @@
-import { ModalStatus } from '../types';
+import { ModalStatus } from '../lib/types';
 import { initialState } from './initialState';
 
 const OPEN_MODAL = 'OPEN_MODAL';

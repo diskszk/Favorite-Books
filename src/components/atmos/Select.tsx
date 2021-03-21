@@ -1,5 +1,5 @@
 import React from 'react';
-import { Value, Label } from '../../types';
+import { Value, Label } from '../../lib/types';
 import { css } from '@emotion/react';
 
 const select = css({
