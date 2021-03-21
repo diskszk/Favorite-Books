@@ -1,4 +1,4 @@
-import { LoadingStatus } from '../lib/types';
+import { LoadingStatus } from '../types';
 import { initialState } from './initialState';
 
 const START_LOADING = 'START_LOADING';

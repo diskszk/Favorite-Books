@@ -1,4 +1,4 @@
-import { ErrorStatus } from '../lib/types';
+import { ErrorStatus } from '../types';
 import { initialState } from './initialState';
 
 const DISPLAY_ERROR_MESSAGE = 'DISPLAY_ERROR_MESSAGE';

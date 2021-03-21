@@ -32,9 +32,7 @@ export const Header: React.FC = () => {
   return (
     <header css={header}>
       <div css={title}>
-        {/* <a > */}
         <Link href="/">My Favorite Books</Link>
-        {/* </a> */}
       </div>
 
       <div>

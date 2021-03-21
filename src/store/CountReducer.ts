@@ -1,4 +1,4 @@
-import { Count } from '../lib/types';
+import { Count } from '../types';
 import { initialState } from './initialState';
 
 const INCREMENT = 'INCREMENT';

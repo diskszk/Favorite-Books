@@ -13,13 +13,11 @@ const Error: React.FC = () => {
 
       console.log(data);
     } catch (err) {
-      console.error(err);
-
       dispatch(
         createDisplayErrorMessageAction({
           isError: true,
           errorMessage: err.message,
-          errorStatus: err.status,
+          errorStatus: '500',
         })
       );
       dispatch(createOpenModalAction());

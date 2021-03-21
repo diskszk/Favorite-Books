@@ -1,4 +1,4 @@
-import { Count, LoadingStatus, ErrorStatus, Message, ModalStatus } from '../lib/types';
+import { Count, LoadingStatus, ErrorStatus, Message, ModalStatus } from '../types';
 
 export type RootStore = {
   count: Count;

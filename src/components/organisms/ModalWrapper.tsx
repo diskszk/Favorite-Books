@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { styles } from '../../constants';
 import { useSelector } from 'react-redux';
 import { RootStore } from '../../store/initialState';
-import { ModalStatus } from '../../lib/types';
+import { ModalStatus } from '../../types';
 
 const { color } = styles;
 const background = css({

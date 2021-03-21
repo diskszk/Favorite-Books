@@ -7,7 +7,7 @@ import {
   // createDecrementAction,
   createIncrementAction,
 } from '../store/CountReducer';
-import { Count } from '../lib/types';
+import { Count } from '../types';
 
 Enzyme.configure({ adapter: new Adapter() });
 
