@@ -2,22 +2,21 @@ import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import Link from 'next/link';
 
-const header = css({
-  height: 64,
-  backgroundColor: 'lightgreen',
+const header = css`
+  height: 5rem;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+`;
 
-  display: 'flex',
-  justifyContent: 'space-between',
-  padding: '0 32px',
-});
-
-const title = css({
-  lineHeight: '64px',
-  fontSize: '24px',
+const title = css`
+  line-height: 5rem;
+  font-size: 24px;
   a: {
-    color: '#fefefe',
-  },
-});
+    color: #fefefe;
+  }
+`;
 
 export const Header: React.FC = () => {
   const [isSignin, setIsSignin] = useState(false);

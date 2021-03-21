@@ -3,12 +3,19 @@ import { css } from '@emotion/react';
 import { Button, Input, Select } from '../atmos';
 import { ISBN_CODE, BOOK_AUTHOR, BOOK_TITLE } from '../../constants';
 import { Value, Label } from '../../lib/types';
+import { PostCard } from '../molecules';
 import { Spacer } from '../common';
 
 const container = css({
   padding: '40px 0 40px 0',
   textAlign: 'center',
 });
+const postCardWrapper = css`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
 
 export const SearchArea: React.FC = () => {
   const [searchType, setSearchType] = useState<Value>(ISBN_CODE.value);
@@ -71,13 +78,12 @@ export const SearchArea: React.FC = () => {
         }}
       />
       <Spacer height={2} />
-      <div>
-        {`結果表示 
-        ・
-        ・
-        ・
-        `}
-      </div>
+      <ul css={postCardWrapper}>
+        <PostCard />
+        <PostCard />
+        <PostCard />
+        <PostCard />
+      </ul>
     </div>
   );
 };

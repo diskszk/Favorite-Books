@@ -5,4 +5,8 @@ module.exports = {
     };
     return config;
   },
+  images: {
+    // rakutenAPIで取得した画像を使う
+    domains: ['thumbnail.image.rakuten.co.jp'],
+  },
 };
