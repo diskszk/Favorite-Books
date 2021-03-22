@@ -7,5 +7,5 @@ type Props = {
 };
 
 export const BookThumbnail: React.FC<Props> = ({ src = NO_IMAGE_PATH }) => {
-  return <Image src={src} alt={`本のサムネイル`} width={141} height={200} />;
+  return <Image src={src} alt={`本のサムネイル`} width={141} height={200} loading={'eager'} />;
 };

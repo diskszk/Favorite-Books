@@ -1,20 +1,30 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import Link from 'next/link';
+import { STYLES } from '../../constants';
 
 const header = css`
-  height: 5rem;
+  height: 4rem;
   background-color: lightgreen;
   display: flex;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 8rem;
+
+  @media screen and (max-width: ${STYLES.DEVICES.SP}) {
+    padding: 0 0.5rem;
+  }
 `;
 
 const title = css`
-  line-height: 5rem;
-  font-size: 24px;
-  a: {
+  line-height: 4rem;
+  font-weight: bold;
+  a {
     color: #fefefe;
+    text-decoration: none;
+
+    :visited {
+      color: #fefefe;
+    }
   }
 `;
 

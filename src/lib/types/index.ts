@@ -1,6 +1,6 @@
-export type Value = 'isbnCode' | 'author' | 'title';
-export type Label = 'ISBNコード' | '著者名' | '書籍名';
+// export type Value = 'isbn' | 'author' | 'title';
 
+export type Label = '書籍名' | '著者名' | 'ISBNコード';
 export type SearchBookType = 'title' | 'author' | 'isbn';
 
 // Redux
@@ -27,34 +27,34 @@ export type ModalStatus = {
 export type Book = {
   Item: {
     limitedFlag: number;
-    authorKana: string;
+    // authorKana: string;
     author: string;
     subTitle: string;
-    seriesNameKana: string;
+    // seriesNameKana: string;
     title: string;
-    subTitleKana: string;
-    itemCaption: string;
+    // subTitleKana: string;
+    // itemCaption: string;
     publisherName: string;
-    listPrice: number;
+    // listPrice: number;
     isbn: string;
     largeImageUrl: string;
-    mediumImageUrl: string;
-    titleKana: string;
-    availability: string;
-    postageFlag: number;
-    salesDate: string;
-    contents: string;
-    smallImageUrl: string;
-    discountPrice: number;
-    itemPrice: number;
+    // mediumImageUrl: string;
+    // titleKana: string;
+    // availability: string;
+    // postageFlag: number;
+    // salesDate: string;
+    // contents: string;
+    // smallImageUrl: string;
+    // discountPrice: number;
+    // itemPrice: number;
     size: string;
-    booksGenreId: string;
-    affiliateUrl: string;
+    // booksGenreId: string;
+    // affiliateUrl: string;
     seriesName: string;
-    reviewCount: number;
+    // reviewCount: number;
     reviewAverage: string;
-    discountRate: number;
-    chirayomiUrl: string;
+    // discountRate: number;
+    // chirayomiUrl: string;
     itemUrl: string;
   };
 };

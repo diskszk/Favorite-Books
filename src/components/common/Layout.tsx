@@ -1,7 +1,7 @@
 import React from 'react';
 import emotionReset from 'emotion-reset';
 import { Global, css } from '@emotion/react';
-import { styles } from '../../constants';
+import { STYLES } from '../../constants';
 
 import { useSelector } from 'react-redux';
 import { RootStore } from '../../store/initialState';
@@ -10,15 +10,19 @@ import { ErrorStatus, LoadingStatus, ModalStatus } from '../../lib/types';
 import { ErrorModal, LoadingModal } from './';
 import { Header } from '../organisms';
 
-const color = styles.color;
+const { WHITE } = STYLES.COLOR;
 
-const wrapper = css({
-  width: '80%',
-  backgroundColor: color.white,
-  margin: '0 auto',
-  border: '0px',
-  borderRadius: '0 0 8px 8px',
-});
+const wrapper = css`
+  width: 80%;
+  background-color: ${WHITE};
+  margin: 0 auto;
+  border: 0px;
+  border-radius: 0 0 8px 8px;
+
+  @media screen and (max-width: ${STYLES.DEVICES.SP}) {
+    width: 100%;
+  }
+`;
 
 export const Layout: React.FC = ({ children }) => {
   const { isOpen } = useSelector<RootStore, ModalStatus>((state) => state.modalStatus);

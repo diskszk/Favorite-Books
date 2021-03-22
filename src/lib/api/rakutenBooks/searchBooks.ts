@@ -14,6 +14,8 @@ export async function searchBooks(type: SearchBookType, value: string): Promise<
   // rakuten books APIを叩く
   const url = `${baseUrl}?format=json&${type}=${encodedValue}&applicationId=${applicationId}`;
 
+  console.log(url);
+
   try {
     const res = await axios.get<SearchBookData>(url);
 
