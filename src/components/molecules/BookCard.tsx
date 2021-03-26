@@ -5,7 +5,6 @@ import { BookThumbnail } from '../atmos';
 
 const cardWrapper = css`
   width: 44%;
-  background-color: #afa;
   margin: 1.5rem;
   padding: 1rem;
   box-shadow: 4px 4px 8px rgba(100, 100, 100, 0.4);

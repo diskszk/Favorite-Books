@@ -2,31 +2,37 @@ import axios from 'axios';
 import { applicationId, baseUrl } from './config';
 import { SearchBookType, Book } from '../../types';
 
-type SearchBookData = {
+type SearchBook = {
   Items: Book[];
   hits: number;
+  page: number;
+  pageCount: number;
 };
 
-export async function searchBooks(type: SearchBookType, value: string): Promise<Book[]> {
+export async function searchBooks(
+  type: SearchBookType,
+  value: string,
+  page = 1
+): Promise<SearchBook> {
+  console.log('SEARCHING!!');
+
   // URLエンコードする
   const encodedValue = encodeURI(value);
 
   // rakuten books APIを叩く
-  const url = `${baseUrl}?format=json&${type}=${encodedValue}&applicationId=${applicationId}`;
-
-  console.log(url);
+  const url = `${baseUrl}?format=json&formatVersion=2&${type}=${encodedValue}&applicationId=${applicationId}&page=${page}`;
 
   try {
-    const res = await axios.get<SearchBookData>(url);
+    const { data, status } = await axios.get<SearchBook>(url);
 
-    if (res.data.hits === 0) {
-      return [];
+    if (status === 500) {
+      throw new Error(`サーバーエラー` + status);
     }
 
-    return res.data.Items;
+    return data;
   } catch (err) {
-    console.log('error!!');
+    console.log(status);
 
-    return [];
+    throw new Error(err);
   }
 }

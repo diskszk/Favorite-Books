@@ -1,18 +1,15 @@
-import { Count, LoadingStatus, ErrorStatus, Message, ModalStatus, Book } from '../lib/types';
+import { LoadingStatus, ErrorStatus, Message, ModalStatus, Book } from '../lib/types';
 
 export type RootStore = {
-  count: Count;
   loadingStatus: LoadingStatus;
   errorStatus: ErrorStatus;
   message: Message;
   modalStatus: ModalStatus;
-  books: Book[];
+
+  books: Book[] | null;
 };
 
 export const initialState: RootStore = {
-  count: {
-    value: 0,
-  },
   loadingStatus: {
     isLoading: false,
   },

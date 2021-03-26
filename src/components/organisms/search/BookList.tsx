@@ -1,9 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useRef, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { css } from '@emotion/react';
-import { Book } from '../../../lib/types';
+import { Book, SearchBookType } from '../../../lib/types';
 import { BookCard } from '../../molecules';
 import { RootStore } from '../../../store/initialState';
+import { Pagination } from '../../common/Pagination';
 
 const postCardWrapper = css`
   display: flex;
@@ -18,15 +19,37 @@ const msg = css`
   }
 `;
 
-export const BookList: React.FC = () => {
+type Props = {
+  setPage: (value: React.SetStateAction<number>) => void;
+  currentPage: number;
+  searchType: SearchBookType;
+  value: string;
+  handleChangeBooks: () => Promise<void>;
+  totalPage: number;
+};
+
+export const BookList: React.FC<Props> = (props) => {
+  const { setPage, currentPage, searchType, value, handleChangeBooks, totalPage } = props;
+
+  const dispatch = useDispatch();
   const books = useSelector<RootStore, Book[]>((state) => state.books);
+
+  const isFirstRender = useRef(true);
+
+  useEffect(() => {
+    if (!books) {
+      return;
+    }
+
+    // handleChangeBooks();
+  }, [dispatch, searchType, value, currentPage, handleChangeBooks, books]);
 
   return (
     <>
       {/* 初期値null */}
       {books && (
         <>
-          {books.length < 1 ? (
+          {isFirstRender.current && books.length < 1 ? (
             <div css={msg}>
               <h2>該当する書籍が見つかりませんでした</h2>
               <p>
@@ -34,24 +57,30 @@ export const BookList: React.FC = () => {
               </p>
             </div>
           ) : (
-            <ul css={postCardWrapper}>
-              {books.map((book: Book, key) => {
-                const item = book.Item;
-
-                return (
-                  <BookCard
-                    key={key}
-                    author={item.author}
-                    title={item.title}
-                    largeImageUrl={item.largeImageUrl}
-                    seriesName={item.seriesName}
-                    reviewAverage={item.reviewAverage}
-                    itemUrl={item.itemUrl}
-                    detailsPageUrl={'/'}
-                  />
-                );
-              })}
-            </ul>
+            <>
+              <ul css={postCardWrapper}>
+                {books.map((book: Book, key) => {
+                  return (
+                    <BookCard
+                      key={key}
+                      author={book.author}
+                      title={book.title}
+                      largeImageUrl={book.largeImageUrl}
+                      seriesName={book.seriesName}
+                      reviewAverage={book.reviewAverage}
+                      itemUrl={book.itemUrl}
+                      detailsPageUrl={'/'}
+                    />
+                  );
+                })}
+              </ul>
+              <Pagination
+                currentPage={currentPage}
+                totalPage={totalPage}
+                setPage={setPage}
+                onChange={handleChangeBooks}
+              />
+            </>
           )}
         </>
       )}
