@@ -1,9 +1,16 @@
 import Link from 'next/link';
+import { getApple } from '../lib/api/getApple';
 
 const SignIn: React.FC = () => {
+  const handleHello = async () => {
+    const res = await getApple();
+
+    console.log(res);
+  };
+
   return (
     <div>
-      <p>もどる</p>
+      <button onClick={handleHello}>API</button>
 
       <Link href="/">もどる</Link>
     </div>
