@@ -1,11 +1,10 @@
-import { Counter } from 'src/components/Counter';
-import { Hello } from '../components/Hello';
+import Link from 'next/link';
 
 const Index: React.FC = () => {
   return (
     <>
-      <Hello name={'banana'} />
-      <Counter />
+      <Link href={'/search'}>検索画面</Link>
+      <Link href={'/signin'}>サインイン</Link>
     </>
   );
 };
